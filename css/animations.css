@@ -1,0 +1,173 @@
+/**
+ * animations.css - Animaciones y Transiciones
+ * 
+ * Keyframes para efectos de la interfaz:
+ * resplandores, apariciones, spinner, shake, etc.
+ * Incluye animaciones para SVG (ríos, nubes, aura).
+ */
+
+/* === KEYFRAMES === */
+
+/* Fade in desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in desde la derecha */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in general */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Spinner de carga */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Shake para errores */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+    20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+/* Resplandor dorado pulsante */
+@keyframes goldenPulse {
+    0%, 100% { 
+        box-shadow: 0 0 5px var(--gold-glow);
+    }
+    50% { 
+        box-shadow: 0 0 20px var(--gold-glow), 0 0 40px rgba(212, 160, 23, 0.1);
+    }
+}
+
+/* Aura mágica rotante */
+@keyframes magicAuraRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Aura mágica pulsante */
+@keyframes magicAuraPulse {
+    0%, 100% {
+        stroke-opacity: 0.15;
+        stroke-width: 6;
+    }
+    50% {
+        stroke-opacity: 0.3;
+        stroke-width: 10;
+    }
+}
+
+/* Flujo del río */
+@keyframes riverFlow {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -50; }
+}
+
+/* Parpadeo de estrellas (para decoración) */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Escala con rebote */
+@keyframes scaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    70% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* === CLASES DE ANIMACIÓN === */
+
+.animate-fade-in {
+    animation: fadeIn var(--transition-base) ease forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp var(--transition-base) ease forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight var(--transition-base) ease forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn var(--transition-spring) forwards;
+}
+
+.animate-golden-pulse {
+    animation: goldenPulse 3s ease-in-out infinite;
+}
+
+/* === SVG ANIMATIONS === */
+
+/* Ríos - animación de flujo */
+.river-path {
+    animation: riverFlow 4s linear infinite;
+}
+
+/* Aura mágica de criaturas */
+.magic-aura {
+    animation: magicAuraPulse 3s ease-in-out infinite;
+}
+
+/* Nubes - movimiento horizontal */
+.cloud {
+    /* La animación se aplica inline por el generador SVG */
+    opacity: 1;
+}
+
+/* === TRANSICIONES DE INTERACTIVIDAD === */
+
+/* Hover suave en elementos interactivos */
+.interactive-hover {
+    transition: transform var(--transition-fast), 
+                box-shadow var(--transition-fast),
+                background var(--transition-fast);
+}
+
+.interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* === REDUCIR ANIMACIONES PARA ACCESIBILIDAD === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .river-path {
+        animation: none;
+    }
+
+    .magic-aura {
+        animation: none;
+    }
+
+    .cloud {
+        display: none;
+    }
+}

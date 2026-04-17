@@ -1,0 +1,106 @@
+/**
+ * variables.css - Sistema de Diseño y Variables
+ * 
+ * Define la paleta de colores, tipografía, espaciado
+ * y variables globales del tema "Explorer's Atlas".
+ * Paleta oscura con acentos dorados y textura medieval.
+ */
+
+:root {
+    /* === PALETA DE COLORES === */
+    /* Fondo principal - Oscuro profundo */
+    --bg-primary: #0a0a12;
+    --bg-secondary: #12121e;
+    --bg-tertiary: #1a1a2e;
+    --bg-card: rgba(26, 26, 46, 0.85);
+
+    /* Acentos dorados - Tema cartógrafo */
+    --gold-primary: #d4a017;
+    --gold-light: #f0d060;
+    --gold-dark: #a07010;
+    --gold-glow: rgba(212, 160, 23, 0.3);
+
+    /* Texto */
+    --text-primary: #e8dcc8;
+    --text-secondary: #b8a890;
+    --text-muted: #7a6a5a;
+    --text-inverse: #0a0a12;
+
+    /* Acentos funcionales */
+    --accent-danger: #c04040;
+    --accent-success: #3a8a4a;
+    --accent-info: #4a7ab5;
+    --accent-warning: #c08030;
+
+    /* Pergamino */
+    --parchment-bg: rgba(180, 160, 120, 0.08);
+    --parchment-border: rgba(180, 160, 120, 0.15);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(20, 20, 35, 0.75);
+    --glass-border: rgba(200, 180, 140, 0.12);
+    --glass-blur: 16px;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    /* === TIPOGRAFÍA === */
+    --font-body: 'Quicksand', 'Segoe UI', sans-serif;
+    --font-medieval: 'MedievalSharp', 'Georgia', serif;
+    --font-mono: 'Fira Code', 'Consolas', monospace;
+
+    /* Tamaños de fuente */
+    --fs-xs: 0.7rem;
+    --fs-sm: 0.8rem;
+    --fs-base: 0.95rem;
+    --fs-md: 1.1rem;
+    --fs-lg: 1.4rem;
+    --fs-xl: 1.8rem;
+    --fs-xxl: 2.4rem;
+    --fs-hero: 3rem;
+
+    /* Pesos */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    /* === ESPACIADO === */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+
+    /* === BORDES === */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-round: 50%;
+
+    /* === TRANSICIONES === */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* === Z-INDEX === */
+    --z-map: 1;
+    --z-svg-overlay: 2;
+    --z-ui: 10;
+    --z-panel: 100;
+    --z-modal: 200;
+    --z-tooltip: 300;
+
+    /* === LAYOUT === */
+    --header-height: 64px;
+    --sidebar-width: 280px;
+    --panel-max-width: 420px;
+}
+
+/* Tema claro alternativo (reservado para futuro uso) */
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Si se quisiera modo claro, descomentar y ajustar */
+    }
+}

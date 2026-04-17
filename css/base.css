@@ -1,0 +1,158 @@
+/**
+ * base.css - Reset y Estilos Globales
+ * 
+ * Reset moderno, tipografía base Quicksand,
+ * estilos globales y utilidades comunes.
+ */
+
+/* === RESET MODERNO === */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-medieval);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    color: var(--gold-light);
+}
+
+h1 { font-size: var(--fs-xxl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); letter-spacing: 0.02em; }
+h4 { font-size: var(--fs-md); }
+
+.font-medieval {
+    font-family: var(--font-medieval);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+    color: var(--text-secondary);
+}
+
+strong {
+    font-weight: var(--fw-bold);
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--gold-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--gold-light);
+}
+
+/* === SCROLLBAR PERSONALIZADO === */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-primary);
+}
+
+/* === SELECCIÓN DE TEXTO === */
+::selection {
+    background: var(--gold-dark);
+    color: var(--text-primary);
+}
+
+/* === IMÁGENES === */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === LISTAS === */
+ul, ol {
+    list-style: none;
+}
+
+/* === BOTONES BASE === */
+button {
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    color: inherit;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 2px;
+}
+
+/* === INPUTS BASE === */
+input, textarea {
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* === CANVAS === */
+canvas {
+    display: block;
+}
+
+/* === UTILIDADES === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.text-gold {
+    color: var(--gold-primary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
